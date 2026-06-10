@@ -17,7 +17,17 @@ spec:
           image: nginx
           env:
             - name: APP_MESSAGE
-              value: "Hello from app.yaml"
+              valueFrom:
+                configMapKeyRef:
+                  name: app-config
+                  key: APP_MESSAGE
+
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: db-secret
+                  key: DB_PASSWORD
+
           ports:
             - containerPort: 80
 
