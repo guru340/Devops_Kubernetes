@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: app1-hello  
 spec:
-  replicas: 8
+  replicas: 4
   selector:
     matchLabels:
       app: app1-hello  
@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: app1-hello  
-          image: embrakx/hello-spring:latest
+          image: embarkx/hello-spring:latest
           
 
           ports:
