@@ -15,7 +15,10 @@ spec:
       containers:
         - name: service-a
           image: embarkx/tax-service-a:latest
-          
+          env:
+            -name: TAX_SERVICE_URL
+            value: "http://service-b:4000"
+           
 
           ports:
             - containerPort: 3000
@@ -28,8 +31,8 @@ metadata:
 spec:
   selector:
     app: service-a 
-  type: ClusterIP
+  type: LoadBalancer
   ports:
     - port: 80
-      targetPort: 80
+      targetPort: 3000
      
