@@ -20,7 +20,7 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: backend
+                name: service-a
                 port:
                   number: 80
 

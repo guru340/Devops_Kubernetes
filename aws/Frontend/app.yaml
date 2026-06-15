@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: dcode007/tax-calculator-frontend
+          image: dcode007/tax-calculator-frontend:latest
           
 
           ports:
