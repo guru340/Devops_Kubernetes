@@ -1,0 +1,55 @@
+name: Hello Spring Boot App To Docker
+
+on:
+    push
+    # workflow_dispatch
+
+jobs:
+    build-test:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout Code
+              uses: actions/checkout@v4
+            
+            - name: Setup JDK
+              uses: actions/setup-java@v5
+              with:
+                distribution: 'temurin'
+                java-version: '21'
+              
+            
+            - name: Build and Test(Maven)
+              working-directory: C:\Users\Mayank Sangwani\OneDrive\Desktop\Devops\springboot
+              run: mvn -B clean verify
+
+            - name: Upload Test Reports
+              uses: actions/upload-artifact@v4
+              with:
+                name: test-reports
+                path: C:\Users\Mayank Sangwani\OneDrive\Desktop\Devops\springboot\target\surefire-reports
+
+            
+    
+    docker-build-push:
+        runs-on: ubuntu-latest
+        needs: build-test
+
+
+        steps:
+            - name: Checkout Code
+              run: echo "Hello From the Second pipline"
+            
+            - name: Setup JDK
+              run: echo "Hello From the Second pipline"
+            
+            - name: Build JAR for Docker 
+              run: echo "Hello From the Second pipline"
+
+            - name: Login to DockerHub
+              run: echo "Hello From the Second pipline"
+            
+            - name: Build and Push Docker Image  
+              run: echo "Hello From the Second pipline"
+            
+            
