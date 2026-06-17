@@ -1,4 +1,4 @@
-name: Tax Calculator CI_CD to AWS EKS
+name: Tax Calculator  frontend CI_CD to AWS EKS
 
 on:
     # push
