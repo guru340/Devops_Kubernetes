@@ -69,6 +69,7 @@ jobs:
               uses: docker/build-push-action@v6
               with:
                 context: app2-tax-calculator/tax-calculator-frontend
+                file: app2-tax-calculator/tax-calculator-frontend/Dockerfile
                 push: true
                 tags: ${{ secrets.DOCKERHUB_USERNAME }}/tax-calculator-frontend:latest
 
