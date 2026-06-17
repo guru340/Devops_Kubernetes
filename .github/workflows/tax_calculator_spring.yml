@@ -110,5 +110,6 @@ jobs:
 
             - name: Deploy to AWS (Kubernetes)
               run: 
-                kubectl apply -f app2-tax-calculator/spring/service-a
-                kubectl apply -f app2-tax-calculator/spring/service-b
+                kubectl apply -f aws/service-a
+                kubectl apply -f aws/service-b
+                
