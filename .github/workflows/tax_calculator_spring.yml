@@ -109,7 +109,7 @@ jobs:
               run: kubectl get nodes
 
             - name: Deploy to AWS (Kubernetes)
-              run: 
+              run: |
                 kubectl apply -f aws/service-a
                 kubectl apply -f aws/service-b
                 
