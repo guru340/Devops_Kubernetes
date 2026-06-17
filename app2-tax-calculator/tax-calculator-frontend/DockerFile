@@ -3,7 +3,7 @@ FROM node:25-alpine AS builder
 
 WORKDIR /app
 
-COPY package*.json ./
+COPY package*.json ./docker build -f DockerFile -t tax-calculator-frontend .
 RUN npm ci
 
 COPY . .
