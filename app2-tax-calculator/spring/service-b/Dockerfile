@@ -1,4 +1,9 @@
-FROM ubuntu:latest
-LABEL authors="Mayank Sangwani"
+FROM eclipse-temurin:21-jdk-alpine
 
-ENTRYPOINT ["top", "-b"]
+WORKDIR /app
+COPY target/taxb-0.0.1-SNAPSHOT.jar app.jar
+
+EXPOSE 8081
+
+
+ENTRYPOINT ["java", "-jar","app.jar"]
