@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: service-b
-          image: embarkx/tax-service-b:latest
+          image: mayanksangwani/tax-service-b:latest
           
 
           ports:
