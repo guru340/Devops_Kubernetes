@@ -4,4 +4,3 @@ metadata:
   name: app-config
 data:
   APP_MESSAGE: "Hello from Kubernetes ConfigMap"
-|
